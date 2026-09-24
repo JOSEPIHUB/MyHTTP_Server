@@ -1,4 +1,4 @@
-# MyHTTP_Server -- Hades\_Town
+# Hades\_Town
 
 Serveur web léger écrit en **C++**, supportant uniquement les méthodes HTTP **GET** et **HEAD**.
 
@@ -9,19 +9,19 @@ Hades\_Town est un serveur HTTP minimaliste conçu pour être simple, rapide et 
 - **GET** — renvoie le corps de la ressource demandée (fichiers statiques).
 - **HEAD** — renvoie les mêmes en-têtes que `GET`, mais sans le corps de la réponse.
 
-Toute autre méthode renvoie une erreur **405 Method Not Allowed**.
+Toute autre méthode renvoie une erreur **405 Method Not Allowed** ou **501 Not Implemented**.
 
 ## Fonctionnalités
 
 - Réponses HTTP/1.1 conformes pour `GET` et `HEAD`
 - Gestion des codes d'erreur courants (`200`, `404`, `405`, …)
 - Servir des fichiers statiques depuis un répertoire racine
-- Code C++ modulaire et commenté
+- Code C++ modulaire
 
 ## Compilation
 
 ```bash
-make        # ou : g++ -Wall -Wextra -Werror -std=c++98 src/*.cpp -o hades_town
+make
 ```
 
 ## Utilisation
@@ -38,7 +38,7 @@ Le serveur écoute ensuite sur le port indiqué et sert les fichiers du réperto
 
 ```text
 Hades_Town/
+├── include/    # Fichiers d'en-tête (.hpp)
 ├── src/        # Code source C++
-├── www/        # Fichiers statiques servis
 └── Makefile
 ```
